@@ -1,39 +1,23 @@
-// funciones
+const characters = [ 'Punisher', 'Venom', 'Deadpool', 'Carnage' ];
 
+// const [ p3, p2, p1 ] = characters;
+const [ , p2, p1 ] = characters;  // dejando en blanco el indice, se omite el valor, y pasa ala siguiente
 
-// funcion normal
-const saludar = function( nombre ){
-    return `Hola: ${nombre}`
-};
+console.log( p2, p1 );
 
-// funcion de flecha
-const saludar2 = ( nombre ) => {
-    return `Hola: ${nombre}`
-};
+const returnArray = () => {
+    return ['ABC', 1234 ]
+}
 
-// funcion de flecha simple
-const saludar3 = ( nombre ) => `Hola: ${ nombre }`; 
-
-// funcion de flecha sin argumentos
-const saludar4 = () => `Hola Mundano`; 
-
-console.log( saludar( 'Jorge' ));
-console.log( saludar2( 'Jordi' ));
-console.log( saludar3( 'Raul' ));
-console.log( saludar4());
-
-const getUser = () => 
-       ({uid: 'ABC123',
-        usarname: 'test_User'})
-
-
-const user = getUser();
-console.log( user );
-
+const [ letras, numeros ] = returnArray();
+console.log( letras, numeros );
 
 
 // tarea
-const getActiveUser = ( nombre ) => ({ uid: 'ABF234', username: nombre });
+const useState = ( value ) => {
+    return [ value, () => { console.log('Hola mundano') } ];
+};
 
-const activeUser = getActiveUser( 'Fernando' );
-console.log( activeUser );
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const arr = useState( 'Goku' );
+console.log( arr );
